@@ -1,0 +1,43 @@
+# File patterns to include in linting.
+include = ["*.py"]
+
+# The number of spaces per indentation level.
+indent-width = 4
+
+# Following PEP8 guidelines and with the team's agreement,
+# set the code line length to 99 characters.
+line-length = 99
+
+[format]
+# Enables automatic formatting for code blocks inside docstrings.
+docstring-code-format = true
+
+# Respect Brack, disallow tabs.
+indent-style = "space"
+
+# Prefer double quotes over single quotes.
+quote-style = "double"
+
+# Enforce trailing comma.
+skip-magic-trailing-comma = false
+
+[lint]
+# Enable all linting rules.
+select = ["ALL"]
+
+# Ignore specific linting rules.
+ignore = [
+    "D",
+    "INP001", # Allow missing __init__.py files.
+    "BLE001", # Allow catch all exceptions.
+    "PGH003", # Allow `type: ignore`.
+    "TRY300", # Allow `try` without `except`.
+]
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+
+unfixable = [
+    "T201", # Prevents auto-fixing print statements.
+    "T203", # Prevents auto-fixing pprint statements.
+]
